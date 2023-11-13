@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	{% load bootstrap5 %}
+	{% bootstrap_javascript %}
+	{% bootstrap_css %}
+	<title>Научно-исследовательская деятельность НИИ</title>
+</head>
+<body>
+	<h1>Список участий</h1>
+	{% for wOn  in wOns %}
+	<div>
+		<p>{{ wOn.project.title }} - {{ wOn.worker.surname }} <p>
+	</div>
+	{% endfor %}
+	<h1>Список проектов</h1>
+	{% for key, value  in dprojects.items %}
+	<div>
+		<h2>{{ key }}</h2>
+		{% for w  in value %}		
+		<li>{{ w }}</li>
+		{% endfor %}
+	</div>
+	{% endfor %}
+
+</body>
+</html>
